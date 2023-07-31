@@ -20,4 +20,9 @@ class FrontendController extends Controller
     {
         return view('pages.frontend.cart');
     }
+
+    public function success()
+    {
+        return view('pages.frontend.success');
+    }
 }
