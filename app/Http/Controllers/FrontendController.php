@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('pages.frontend.index');
+    }
+
+    public function details()
+    {
+        return view('pages.frontend.details');
     }
 }
