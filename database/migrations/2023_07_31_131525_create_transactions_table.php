@@ -26,6 +26,9 @@ class CreateTransactionsTable extends Migration
             $table->string('payment')->default('MIDTRANS');
             $table->string('payment_url')->nullable();
 
+            $table->bigInteger('total_price')->default(0);
+            $table->string('status')->default('PENDING');
+
             $table->timestamps();
             $table->softDeletes();
         });
