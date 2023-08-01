@@ -106,7 +106,11 @@ class TransactionController extends Controller
      */
     public function update(TransactionRequest $request, Transaction $transaction)
     {
-        //
+        $data = $request->all();
+
+        $transaction->update($data);
+
+        return redirect()->route('dashboard.transaction.index');
     }
 
     /**
