@@ -25,6 +25,13 @@ class FrontendController extends Controller
         return view('pages.frontend.details', compact('product', 'recommendations'));
     }
 
+    public function cart(Request $request)
+    {
+        $carts = Cart::with(['product.galleries'])->where('users_id', Auth::user()->id)->get();
+
+        return view('pages.frontend.cart', compact('carts'));
+    }
+
     public function cartAdd(Request $request, $id)
     {
         Cart::create([
@@ -33,11 +40,6 @@ class FrontendController extends Controller
         ]);
 
         return redirect('cart');
-    }
-
-    public function cart()
-    {
-        return view('pages.frontend.cart');
     }
 
     public function success()
