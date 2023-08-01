@@ -95,7 +95,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('pages.dashboard.product.edit', [
+            'item' => $product
+        ]);
     }
 
     /**
