@@ -25,6 +25,8 @@ Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
 Route::get('/success', [FrontendController::class, 'success'])->name('success');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::post('/cart/{id}', [FrontendController::class, 'cartAdd'])->name('cart-add');
+
     Route::name('dashboard.')->prefix('dashboard')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('index');
 

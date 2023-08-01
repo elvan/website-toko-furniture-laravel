@@ -52,7 +52,7 @@
                 <h2 class="text-5xl font-semibold">{{ $product->name }}</h2>
                 <p class="text-xl">IDR {{ number_format($product->price) }}</p>
 
-                <form action="cart-add" method="POST">
+                <form action="{{ route('cart-add', $product->id) }}" method="POST">
                     @csrf
                     <button
                         class="transition-all duration-200 bg-pink-400 text-black focus:bg-black focus:text-pink-400 rounded-full px-8 py-3 mt-4 inline-flex"><svg
