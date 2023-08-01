@@ -77,7 +77,7 @@
                             </div>
                             <div class="px-4 w-2/12">
                                 <div class="text-center">
-                                    <form action="cart-delete" method="POST">
+                                    <form action="{{ route('cart-delete', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="text-red-600 border-none focus:outline-none px-3 py-1">
