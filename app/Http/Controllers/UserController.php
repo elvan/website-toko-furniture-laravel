@@ -94,7 +94,11 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-        //
+        $data = $request->all();
+
+        $user->update($data);
+
+        return redirect()->route('dashboard.user.index');
     }
 
     /**
