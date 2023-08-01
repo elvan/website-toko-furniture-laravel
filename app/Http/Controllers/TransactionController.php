@@ -92,7 +92,9 @@ class TransactionController extends Controller
      */
     public function edit(Transaction $transaction)
     {
-        //
+        return view('pages.dashboard.transaction.edit', [
+            'item' => $transaction
+        ]);
     }
 
     /**
