@@ -99,7 +99,7 @@ class FrontendController extends Controller
                 'first_name'    => $transaction->name,
                 'email'         => $transaction->email
             ),
-            'enabled_payments' => array('gopay', 'bank_transfer'),
+            'enabled_payments' => array('credit_card', 'gopay', 'bank_transfer', 'indomaret'),
             'vtweb' => array()
         );
 

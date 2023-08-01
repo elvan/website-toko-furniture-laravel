@@ -21,10 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/details/{slug}', [FrontendController::class, 'details'])->name('details');
-Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
-Route::get('/success', [FrontendController::class, 'success'])->name('success');
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::get('/cart', [FrontendController::class, 'cart'])->name('cart');
+
     Route::post('/cart/{id}', [FrontendController::class, 'cartAdd'])->name('cart-add');
     Route::delete('/cart/{id}', [FrontendController::class, 'cartDelete'])->name('cart-delete');
 
