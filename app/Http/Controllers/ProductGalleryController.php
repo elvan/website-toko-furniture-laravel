@@ -51,7 +51,7 @@ class ProductGalleryController extends Controller
      */
     public function create(Product $product)
     {
-        //
+        return view('pages.dashboard.gallery.create', compact('product'));
     }
 
     /**
