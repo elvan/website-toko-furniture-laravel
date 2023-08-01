@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use Illuminate\Support\Str;
 use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
@@ -56,7 +55,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.dashboard.product.create');
     }
 
     /**
