@@ -13,13 +13,13 @@ class Product extends Model
 
     protected $fillable = [
         'name',
-        'slug',
-        'price',
         'description',
+        'price',
+        'slug',
     ];
 
     public function galleries()
     {
-        return $this->hasMany(ProductGallery::class);
+        return $this->hasMany(ProductGallery::class, 'products_id', 'id');
     }
 }
