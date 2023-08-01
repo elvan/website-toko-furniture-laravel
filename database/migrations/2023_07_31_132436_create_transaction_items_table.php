@@ -15,12 +15,12 @@ class CreateTransactionItemsTable extends Migration
     {
         Schema::create('transaction_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id')->constrained('transactions');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('product_id')->constrained('products');
+
+            $table->bigInteger('users_id');
+            $table->bigInteger('products_id');
+            $table->bigInteger('transactions_id');
 
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

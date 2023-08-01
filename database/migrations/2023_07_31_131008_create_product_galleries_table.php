@@ -15,13 +15,13 @@ class CreateProductGalleriesTable extends Migration
     {
         Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
 
+            $table->bigInteger('products_id');
             $table->string('url');
             $table->boolean('is_featured')->default(false);
 
-            $table->timestamps();
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
